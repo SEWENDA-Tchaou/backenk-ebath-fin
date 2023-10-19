@@ -1,7 +1,7 @@
-// import ContentRoute from './routes/ContentRoute.js';
-// import BtpRoute from './routes/BtpRoute.js';
-// import HotelRoute from './routes/HotelRoute.js';
-// import BackgroundRoute from './routes/BackgroundRoute.js';
+import ContentRoute from './routes/ContentRoute.js';
+import BtpRoute from './routes/BtpRoute.js';
+import HotelRoute from './routes/HotelRoute.js';
+import BackgroundRoute from './routes/BackgroundRoute.js';
 import express from 'express'
 import mysql from 'mysql';
 import cors from 'cors';
@@ -14,7 +14,7 @@ const app = express();
 
 // app.use(express.json());
 app.all("/", (req, res)=>{
-    res.send("ebath backend running good")
+    res.send("ebath backend running good and changing")
 })
 app.use(cookieParser());
 app.use(FileUpload());
@@ -28,10 +28,10 @@ app.use(cors(
         // allowedHeaders: ['*'],
     }
 ));
-// app.use(ContentRoute);
-// app.use(BtpRoute);
-// app.use(HotelRoute);
-// app.use(BackgroundRoute);
+app.use(ContentRoute);
+app.use(BtpRoute);
+app.use(HotelRoute);
+app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
     host: "localhost",
