@@ -1,14 +1,16 @@
-import ContentRoute from './routes/ContentRoute.js';
-import BtpRoute from './routes/BtpRoute.js';
-import HotelRoute from './routes/HotelRoute.js';
 import BackgroundRoute from './routes/BackgroundRoute.js';
+import ContentRoute from './routes/ContentRoute.js';
+import HotelRoute from './routes/HotelRoute.js';
+import BtpRoute from './routes/BtpRoute.js';
+import FileUpload from "express-fileupload";
+import cookieParser from 'cookie-parser';
+import jwt from 'jsonwebtoken';
 import express from 'express'
 import mysql from 'mysql';
 import cors from 'cors';
 
-import cookieParser from 'cookie-parser';
-import jwt from 'jsonwebtoken';
-import FileUpload from "express-fileupload";
+require('dotenv').config()
+
 
 const app = express();
 
@@ -34,10 +36,10 @@ app.use(HotelRoute);
 app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "ebath_btp"
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USERNAME || "root",
+    password: process.env.DB_PASSWORD || "",
+    database: process.env.DB_DBNAME || "ebath_btp"
 })
 
 const verifyUser = (req, res, next) => {
