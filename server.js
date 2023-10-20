@@ -8,8 +8,9 @@ import jwt from 'jsonwebtoken';
 import express from 'express'
 import mysql from 'mysql';
 import cors from 'cors';
+import 'dotenv/config' 
 
-require('dotenv').config()
+// require('dotenv').config()
 
 
 const app = express();
