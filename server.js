@@ -8,7 +8,9 @@ import jwt from 'jsonwebtoken';
 import express from 'express'
 import mysql from 'mysql';
 import cors from 'cors';
-import 'dotenv/config' 
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 // require('dotenv').config()
 
