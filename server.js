@@ -39,7 +39,7 @@ app.use(cors(
 // app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOST || "localhost",
+    host: process.env.DB_HOSTNAME || "localhost",
     user: process.env.DB_USERNAME || "root",
     password: process.env.DB_PASSWORD || "",
     database: process.env.DB_DBNAME || "ebath_btp"
