@@ -1,7 +1,7 @@
-import BackgroundRoute from './routes/BackgroundRoute.js';
-import ContentRoute from './routes/ContentRoute.js';
-import HotelRoute from './routes/HotelRoute.js';
-import BtpRoute from './routes/BtpRoute.js';
+// import BackgroundRoute from './routes/BackgroundRoute.js';
+// import ContentRoute from './routes/ContentRoute.js';
+// import HotelRoute from './routes/HotelRoute.js';
+// import BtpRoute from './routes/BtpRoute.js';
 import FileUpload from "express-fileupload";
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
@@ -33,10 +33,10 @@ app.use(cors(
         // allowedHeaders: ['*'],
     }
 ));
-app.use(ContentRoute);
-app.use(BtpRoute);
-app.use(HotelRoute);
-app.use(BackgroundRoute);
+// app.use(ContentRoute);
+// app.use(BtpRoute);
+// app.use(HotelRoute);
+// app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
