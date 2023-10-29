@@ -39,10 +39,10 @@ app.use(cors(
 // app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
-    host: "sql112.byetcluster.com ",
-    user: "if0_35247217",
-    password: "dcpPkAgvtCXlo1c",
-    database: "ifo_35247217_ebath_btp"
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USERNAME || "root",
+    password: process.env.DB_PASSWORD || "",
+    database: process.env.DB_DBNAME || "ebath_btp"
 })
 
 const verifyUser = (req, res, next) => {
