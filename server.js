@@ -39,10 +39,10 @@ app.use(cors(
 // app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOSTNAME || "localhost",
-    user: process.env.DB_USERNAME || "root",
-    password: process.env.DB_PASSWORD || "",
-    database: process.env.DB_DBNAME || "ebath_btp"
+    host: process.env.DB_HOSTNAME || "mysql-prudent.alwaysdata.net",
+    user: process.env.DB_USERNAME || "prudent",
+    password: process.env.DB_PASSWORD || "prudent@prudent",
+    database: process.env.DB_DBNAME || "prudent_ebath_btp"
 })
 
 const verifyUser = (req, res, next) => {
