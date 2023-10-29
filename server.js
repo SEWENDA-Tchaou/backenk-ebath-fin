@@ -39,7 +39,7 @@ app.use(cors(
 // app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
-    host: "sql112.infinityfree.com",
+    host: "sql112.byetcluster.com ",
     user: "if0_35247217",
     password: "dcpPkAgvtCXlo1c",
     database: "ifo_35247217_ebath_btp"
