@@ -27,7 +27,7 @@ app.use(express.static('public'))
 app.use(cors(
     {
         // origin: ['header'],
-        origin: ['http://localhost:5173'],
+        origin: ['https://ebath-site.vercel.app'],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
         credentials: true
         // allowedHeaders: ['*'],
