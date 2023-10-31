@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize ('prudent_ebath_btp', 'prudent', 'prudent@prudent', {
-    host:'mysql-prudent.alwaysdata.net',
+const db = new Sequelize (process.env.DB_DBNAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOSTNAME,
     dialect:'mysql'
 });
 
