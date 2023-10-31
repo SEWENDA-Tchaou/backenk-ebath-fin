@@ -1,15 +1,15 @@
-// import BackgroundRoute from './routes/BackgroundRoute.js';
-// import ContentRoute from './routes/ContentRoute.js';
-// import HotelRoute from './routes/HotelRoute.js';
-// import BtpRoute from './routes/BtpRoute.js';
+import BackgroundRoute from './routes/BackgroundRoute.js';
+import ContentRoute from './routes/ContentRoute.js';
+import HotelRoute from './routes/HotelRoute.js';
+import BtpRoute from './routes/BtpRoute.js';
 
-import {
-    getContents,
-    getContentById,
-    saveContent,
-    updateContent,
-    deleteContent
-} from './controllers/ContentController.js';
+// import {
+//     getContents,
+//     getContentById,
+//     saveContent,
+//     updateContent,
+//     deleteContent
+// } from './controllers/ContentController.js';
 import FileUpload from "express-fileupload";
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
@@ -43,18 +43,18 @@ app.use(cors(
         // allowedHeaders: ['*'],
     }
 ));
-// app.use(ContentRoute);
-// app.use(BtpRoute);
-// app.use(HotelRoute);
-// app.use(BackgroundRoute);
+app.use(ContentRoute);
+app.use(BtpRoute);
+app.use(HotelRoute);
+app.use(BackgroundRoute);
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get('/contents', getContents);
-router.get('/contents/:id', getContentById);
-router.post('/contents', saveContent);
-router.put('/contents/:id', updateContent);
-router.delete('/contents/:id', deleteContent);
+// router.get('/contents', getContents);
+// router.get('/contents/:id', getContentById);
+// router.post('/contents', saveContent);
+// router.put('/contents/:id', updateContent);
+// router.delete('/contents/:id', deleteContent);
 
 const db = mysql.createConnection({
     host: process.env.DB_HOSTNAME || "mysql-prudent.alwaysdata.net",
