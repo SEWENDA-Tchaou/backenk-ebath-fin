@@ -9,7 +9,7 @@ import {
     saveContent,
     updateContent,
     deleteContent
-} from '../controllers/ContentController.js';
+} from './controllers/ContentController.js';
 import FileUpload from "express-fileupload";
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
