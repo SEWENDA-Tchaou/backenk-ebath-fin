@@ -2,14 +2,6 @@
 // import ContentRoute from './routes/ContentRoute.js';
 // import HotelRoute from './routes/HotelRoute.js';
 // import BtpRoute from './routes/BtpRoute.js';
-
-import {
-    getContents,
-    getContentById,
-    saveContent,
-    updateContent,
-    deleteContent
-} from './controllers/ContentController.js';
 import FileUpload from "express-fileupload";
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
@@ -18,8 +10,6 @@ import mysql from 'mysql';
 import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
-
-
 
 
 // require('dotenv').config()
@@ -48,21 +38,12 @@ app.use(cors(
 // app.use(HotelRoute);
 // app.use(BackgroundRoute);
 
-const router = express.Router();
-
-router.get('/contents', getContents);
-router.get('/contents/:id', getContentById);
-router.post('/contents', saveContent);
-router.put('/contents/:id', updateContent);
-router.delete('/contents/:id', deleteContent);
-
 const db = mysql.createConnection({
     host: process.env.DB_HOSTNAME || "mysql-prudent.alwaysdata.net",
     user: process.env.DB_USERNAME || "prudent",
     password: process.env.DB_PASSWORD || "prudent@prudent",
     database: process.env.DB_DBNAME || "prudent_ebath_btp"
 })
-
 
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
