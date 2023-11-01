@@ -7,7 +7,7 @@ export const getContents = async(req, res) => {
         const response = await Hotel.findAll();
         //console.log()
         res.set({
-            "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+            "Access-Control-Allow-Origin": process.env.URLFRONTEND,
             // "Access-Control-Allow-Credentials": true
         }).json(response);
     } catch(error) {
@@ -23,7 +23,7 @@ export const getContentById = async(req, res) => {
             }
         });
         res.set({
-            "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+            "Access-Control-Allow-Origin": process.env.URLFRONTEND,
             // "Access-Control-Allow-Credentials": true,
         }).json(response);
     } catch(error) {
@@ -33,7 +33,7 @@ export const getContentById = async(req, res) => {
 
 export const saveContent = (req, res) => {
     if(req.files === null) return res.set({
-        "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+        "Access-Control-Allow-Origin": process.env.URLFRONTEND,
         "Access-Control-Allow-Credentials": true,
         // 'Access-Control-Allow-Headers': 'Origin'
     }).status(400).json({msg: "Le fichier n'est pas charger"});
@@ -75,7 +75,7 @@ export const updateContent = async(req, res) => {
         const allowedType = ['.png', '.jpg', '.jpeg'];
 
         if(!allowedType.includes(ext.toLocaleLowerCase())) return res.set({
-            "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+            "Access-Control-Allow-Origin": process.env.URLFRONTEND,
             // "Access-Control-Allow-Credentials": true,
             // 'Access-Control-Allow-Headers': 'Origin'
         }).status(422).json({msg: "Le format de l'image n'est valide!"});
@@ -97,7 +97,7 @@ export const updateContent = async(req, res) => {
             }
         });
         res.set({
-            "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+            "Access-Control-Allow-Origin": process.env.URLFRONTEND,
             // "Access-Control-Allow-Credentials": true,
             // 'Access-Control-Allow-Headers': 'Origin'
         }).status(200).json({msg: "Contenu mis a jour avec succès"})
@@ -115,7 +115,7 @@ export const deleteContent = async(req, res) => {
     if(!contenu)
     {
         return res.set({
-            "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+            "Access-Control-Allow-Origin": process.env.URLFRONTEND,
             // "Access-Control-Allow-Credentials": true,
             // 'Access-Control-Allow-Headers': 'Origin'
         }).status(404).json({msg: "Il n'y a aucune donnée"});
@@ -130,7 +130,7 @@ export const deleteContent = async(req, res) => {
                 }
             });
             res.set({
-                "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
+                "Access-Control-Allow-Origin": process.env.URLFRONTEND,
                 "Access-Control-Allow-Credentials": true,
                 // 'Access-Control-Allow-Headers': 'Origin'
             }).status(200).json({msg: "Centenu supprimer avec succès"})
