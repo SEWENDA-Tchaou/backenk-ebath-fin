@@ -239,6 +239,6 @@ app.delete("/supAbonnes/:id", (req, res) =>{
 })
 
 
-app.listen(3000, () => {
-    console.log("Démarrage de mon serveur sur le port 3000")
+app.listen(3306, () => {
+    console.log("Démarrage de mon serveur sur le port 3306")
 })
