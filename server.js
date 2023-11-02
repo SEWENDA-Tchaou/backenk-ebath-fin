@@ -57,10 +57,10 @@ app.use(BackgroundRoute);
 // router.delete('/contents/:id', deleteContent);
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOSTNAME || "mysql-prudent.alwaysdata.net",
-    user: process.env.DB_USERNAME || "prudent",
-    password: process.env.DB_PASSWORD || "prudent@prudent",
-    database: process.env.DB_DBNAME || "prudent_ebath_btp"
+    host: process.env.DB_HOSTNAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DBNAME
 })
 
 
