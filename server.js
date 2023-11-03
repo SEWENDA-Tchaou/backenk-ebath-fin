@@ -37,7 +37,7 @@ app.use(express.static('public'))
 app.use(cors(
     {
         // origin: ['header'],
-        origin: ["https://ebath-site.vercel.app"],
+        origin: [process.env.URLFRONTEND],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
         credentials: true
         // allowedHeaders: ['*'],
@@ -239,6 +239,6 @@ app.delete("/supAbonnes/:id", (req, res) =>{
 })
 
 
-app.listen(3306, () => {
-    console.log("Démarrage de mon serveur sur le port 3306")
+app.listen(3000, () => {
+    console.log("Démarrage de mon serveur sur le port 3000")
 })
