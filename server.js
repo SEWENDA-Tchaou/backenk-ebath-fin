@@ -40,7 +40,7 @@ app.use(cors(
 
         origin: ["https://ebath-site.vercel.app"],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
-        credentials: true,
+        credentials: false,
         allowedHeaders: ['*'],
     }
 ));
