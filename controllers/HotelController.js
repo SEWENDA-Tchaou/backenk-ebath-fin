@@ -8,7 +8,7 @@ export const getContents = async(req, res) => {
         //console.log()
         res.set({
             "Access-Control-Allow-Origin": process.env.URLFRONTEND,
-            // "Access-Control-Allow-Credentials": true
+            "Access-Control-Allow-Credentials": true
         }).json(response);
     } catch(error) {
         console.log(error.message);
@@ -24,7 +24,7 @@ export const getContentById = async(req, res) => {
         });
         res.set({
             "Access-Control-Allow-Origin": process.env.URLFRONTEND,
-            // "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Credentials": true,
         }).json(response);
     } catch(error) {
         console.log(error.message);
@@ -76,7 +76,7 @@ export const updateContent = async(req, res) => {
 
         if(!allowedType.includes(ext.toLocaleLowerCase())) return res.set({
             "Access-Control-Allow-Origin": process.env.URLFRONTEND,
-            // "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Credentials": true,
             // 'Access-Control-Allow-Headers': 'Origin'
         }).status(422).json({msg: "Le format de l'image n'est valide!"});
         if(fileSize > 5000000) return res.status(422).json({msg: "L'image doit avoir une capacite inferieur a 5MB"});
@@ -98,7 +98,7 @@ export const updateContent = async(req, res) => {
         });
         res.set({
             "Access-Control-Allow-Origin": process.env.URLFRONTEND,
-            // "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Credentials": true,
             // 'Access-Control-Allow-Headers': 'Origin'
         }).status(200).json({msg: "Contenu mis a jour avec succès"})
     } catch(error) {
@@ -116,7 +116,7 @@ export const deleteContent = async(req, res) => {
     {
         return res.set({
             "Access-Control-Allow-Origin": process.env.URLFRONTEND,
-            // "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Credentials": true,
             // 'Access-Control-Allow-Headers': 'Origin'
         }).status(404).json({msg: "Il n'y a aucune donnée"});
     }
