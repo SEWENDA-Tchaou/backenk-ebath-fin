@@ -38,7 +38,7 @@ app.use(cors(
     {
         // origin: [URLFRONTEND],
 
-        origin: ["https://ebath-site.vercel.app"],
+        "Access-Control-Allow-Origin": ["https://ebath-site.vercel.app"],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
         credentials: true,
         // allowedHeaders: ['*'],
@@ -212,10 +212,7 @@ app.post("/sendYourMail", (req, res) =>{
         if(err){
             res.json("error")
         }else{
-            res.setHeader({
-                "Access-Control-Allow-Origin":"*",
-                // "Access-Control-Allow-Credentials": true
-            }).json(data)
+            res.json(data)
         }
     })
 })
