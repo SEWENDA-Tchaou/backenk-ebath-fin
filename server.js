@@ -89,7 +89,7 @@ app.post("/login", (req, res) => {
             res.cookie("token", token);
             return res.set({
                 "Access-Control-Allow-Origin": process.env.URLFRONTEND,
-                "Access-Control-Allow-Credentials": true,
+                // "Access-Control-Allow-Credentials": true,
                 // 'Access-Control-Allow-Headers': 'Origin'
             }).json({Status: "succes"})
             console.log("success")
