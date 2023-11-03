@@ -36,11 +36,12 @@ app.use(FileUpload());
 app.use(express.static('public'))
 app.use(cors(
     {
-        origin: ['header'],
+        // origin: [URLFRONTEND],
+
         origin: ["https://ebath-site.vercel.app"],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
-        credentials: true
-        // allowedHeaders: ['*'],
+        credentials: true,
+        allowedHeaders: ['*'],
     }
 ));
 app.use(ContentRoute);
