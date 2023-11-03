@@ -206,6 +206,7 @@ app.post("/sendYourMail", (req, res) =>{
     const values = [
         req.body.email,
     ]
+    console.log(req.body)
     db.query(sql, [values], (err, data) =>{
         if(err){
             res.json("error")
