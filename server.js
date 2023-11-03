@@ -213,7 +213,7 @@ app.post("/sendYourMail", (req, res) =>{
             res.json("error")
         }else{
             res.set({
-                "Access-Control-Allow-Origin":"https://ebath-site.vercel.app",
+                "Access-Control-Allow-Origin":"*",
                 // "Access-Control-Allow-Credentials": true
             }).json(data)
         }
