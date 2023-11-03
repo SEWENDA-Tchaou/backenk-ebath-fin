@@ -37,6 +37,7 @@ export const saveContent = (req, res) => {
         "Access-Control-Allow-Credentials": true,
         // 'Access-Control-Allow-Headers': 'Origin'
     }).status(400).json({msg: "Le fichier n'est pas charger"});
+    console.log(req.body)
     const name = req.body.texte;
     const file = req.files.file;
     const fileSize = file.data.length;
