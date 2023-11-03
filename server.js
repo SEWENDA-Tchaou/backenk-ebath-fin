@@ -44,10 +44,10 @@ app.use(cors(
         // allowedHeaders: ['*'],
     }
 ));
-app.use(ContentRoute);
-app.use(BtpRoute);
-app.use(HotelRoute);
-app.use(BackgroundRoute);
+// app.use(ContentRoute);
+// app.use(BtpRoute);
+// app.use(HotelRoute);
+// app.use(BackgroundRoute);
 
 const db = mysql.createConnection({
     host: process.env.DB_HOSTNAME,
