@@ -92,7 +92,11 @@ app.post("/login", (req, res) => {
                 // 'Access-Control-Allow-Headers': 'Origin'
             }).json({Status: "succes"})
         } else {
-            return res.json({Message: "cet utilisateur n'existe pas"});
+            return res.set({
+                "Access-Control-Allow-Origin": process.env.URLFRONTEND,
+                "Access-Control-Allow-Credentials": true,
+                // 'Access-Control-Allow-Headers': 'Origin'
+            }).json({Message: "cet utilisateur n'existe pas"});
         }
     })
 })
