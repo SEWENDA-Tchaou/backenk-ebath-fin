@@ -212,7 +212,7 @@ app.post("/sendYourMail", (req, res) =>{
         if(err){
             res.json("error")
         }else{
-            res.set({
+            res.setHeader({
                 "Access-Control-Allow-Origin":"*",
                 // "Access-Control-Allow-Credentials": true
             }).json(data)
