@@ -212,7 +212,10 @@ app.post("/sendYourMail", (req, res) =>{
         if(err){
             res.json("error")
         }else{
-            res.json(data)
+            res.set({
+                "Access-Control-Allow-Origin":"https://ebath-site.vercel.app",
+                // "Access-Control-Allow-Credentials": true
+            }).json(data)
         }
     })
 })
