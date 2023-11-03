@@ -36,7 +36,7 @@ app.use(FileUpload());
 app.use(express.static('public'))
 app.use(cors(
     {
-        // origin: ['header'],
+        origin: ['header'],
         origin: [process.env.URLFRONTEND],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
         credentials: true
@@ -47,14 +47,6 @@ app.use(ContentRoute);
 app.use(BtpRoute);
 app.use(HotelRoute);
 app.use(BackgroundRoute);
-
-// const router = express.Router();
-
-// router.get('/contents', getContents);
-// router.get('/contents/:id', getContentById);
-// router.post('/contents', saveContent);
-// router.put('/contents/:id', updateContent);
-// router.delete('/contents/:id', deleteContent);
 
 const db = mysql.createConnection({
     host: process.env.DB_HOSTNAME,
