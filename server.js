@@ -1,7 +1,7 @@
-import BackgroundRoute from './routes/BackgroundRoute.js';
-import ContentRoute from './routes/ContentRoute.js';
-import HotelRoute from './routes/HotelRoute.js';
-import BtpRoute from './routes/BtpRoute.js';
+// import BackgroundRoute from './routes/BackgroundRoute.js';
+// import ContentRoute from './routes/ContentRoute.js';
+// import HotelRoute from './routes/HotelRoute.js';
+// import BtpRoute from './routes/BtpRoute.js';
 
 // import {
 //     getContents,
