@@ -176,10 +176,7 @@ app.get("/afficheCommentaires", (req, res)=>{
         if(err){
             res.json(err);
         }else{
-            res.json(data).set({
-                "Access-Control-Allow-Origin": "https://ebath-site.vercel.app",
-                // "Access-Control-Allow-Credentials": true,
-            }).json(response);
+            res.json(data)
         }
     })
 })
