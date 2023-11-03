@@ -80,6 +80,7 @@ app.get("/",verifyUser, (req, res) => {
 // login
 app.post("/login", (req, res) => {
     const sql = "SELECT * FROM login WHERE email = ? AND password = ?";
+    console.log(req.body)
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if(err) return res.json({Message: "Erreur de serveur!"});
         if(data.length > 0) {
