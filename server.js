@@ -39,7 +39,6 @@ app.use(cors(
         // origin: [URLFRONTEND],
 
         origin: ["https://ebath-site.vercel.app"],
-        header:['Access-Control-Allow-Origin', 'https://ebath-site.vercel.app'],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
         credentials: true,
         // allowedHeaders: ['*'],
