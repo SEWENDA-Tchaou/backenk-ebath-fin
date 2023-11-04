@@ -2,14 +2,6 @@
 // import ContentRoute from './routes/ContentRoute.js';
 // import HotelRoute from './routes/HotelRoute.js';
 // import BtpRoute from './routes/BtpRoute.js';
-
-// import {
-//     getContents,
-//     getContentById,
-//     saveContent,
-//     updateContent,
-//     deleteContent
-// } from './controllers/ContentController.js';
 import FileUpload from "express-fileupload";
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
@@ -19,15 +11,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
-
-
-
-// require('dotenv').config()
-
-
 const app = express();
 
-// app.use(express.json());
 app.all("/", (req, res)=>{
     res.send("ebath backend running good and changing")
 })
@@ -36,8 +21,6 @@ app.use(FileUpload());
 app.use(express.static('public'))
 app.use(cors(
     {
-        // origin: [URLFRONTEND],
-
         origin: ["https://ebath-site.vercel.app"],
         methods: ['POST', 'GET', 'DELETE', 'PUT'],
         credentials: true,
